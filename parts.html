@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketplace - CarHub</title>
+    <title>Car Parts - CarHub</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -16,9 +16,9 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="marketplace.html" class="active">Marketplace</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
                 <li><a href="rentals.html">Rentals</a></li>
-                <li><a href="parts.html">Parts</a></li>
+                <li><a href="parts.html" class="active">Parts</a></li>
                 <li><a href="dealers.html">Dealers</a></li>
             </ul>
         </nav>
@@ -37,12 +37,58 @@
     </div>
 
     <main>
-        <section class="marketplace-header">
-            <h1>Car Marketplace</h1>
-            <p>Find your perfect car from our extensive collection</p>
+        <section class="page-header">
+            <h1>Car Parts & Accessories</h1>
+            <p>Find genuine parts and accessories for your vehicle</p>
         </section>
 
-        <section class="marketplace-content">
+        <section class="parts-categories">
+            <h2>Browse Categories</h2>
+            <div class="category-cards">
+                <div class="category-card" data-category="engine">
+                    <div class="card-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Engine Parts</h3>
+                    <p>Pistons, valves, and more</p>
+                </div>
+                <div class="category-card" data-category="exterior">
+                    <div class="card-icon"><i class="fas fa-car-side"></i></div>
+                    <h3>Exterior</h3>
+                    <p>Body parts and accessories</p>
+                </div>
+                <div class="category-card" data-category="interior">
+                    <div class="card-icon"><i class="fas fa-couch"></i></div>
+                    <h3>Interior</h3>
+                    <p>Seats, dashboards, and more</p>
+                </div>
+                <div class="category-card" data-category="electronics">
+                    <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Electronics</h3>
+                    <p>Sensors, modules, and wiring</p>
+                </div>
+                <div class="category-card" data-category="wheels">
+                    <div class="card-icon"><i class="fas fa-circle"></i></div>
+                    <h3>Wheels & Tires</h3>
+                    <p>Rims, tires, and accessories</p>
+                </div>
+                <div class="category-card" data-category="brakes">
+                    <div class="card-icon"><i class="fas fa-brake-code"></i></div>
+                    <h3>Brakes</h3>
+                    <p>Pads, rotors, and calipers</p>
+                </div>
+                <div class="category-card" data-category="suspension">
+                    <div class="card-icon"><i class="fas fa-car-crash"></i></div>
+                    <h3>Suspension</h3>
+                    <p>Shocks, struts, and springs</p>
+                </div>
+                <div class="category-card" data-category="accessories">
+                    <div class="card-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Accessories</h3>
+                    <p>Floor mats, covers, and more</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="parts-content">
             <div class="filters-sidebar">
                 <div class="filter-section">
                     <h3>Filter Options</h3>
@@ -50,32 +96,32 @@
                 </div>
                 
                 <div class="filter-section">
-                    <h4>Car Type</h4>
+                    <h4>Category</h4>
                     <div class="filter-options">
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="type" value="sedan">
+                            <input type="checkbox" value="engine" class="parts-filter" data-filter="category">
                             <span class="checkmark"></span>
-                            Sedan
+                            Engine Parts
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="type" value="suv">
+                            <input type="checkbox" value="exterior" class="parts-filter" data-filter="category">
                             <span class="checkmark"></span>
-                            SUV
+                            Exterior
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="type" value="hatchback">
+                            <input type="checkbox" value="interior" class="parts-filter" data-filter="category">
                             <span class="checkmark"></span>
-                            Hatchback
+                            Interior
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="type" value="coupe">
+                            <input type="checkbox" value="electronics" class="parts-filter" data-filter="category">
                             <span class="checkmark"></span>
-                            Coupe
+                            Electronics
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="type" value="truck">
+                            <input type="checkbox" value="wheels" class="parts-filter" data-filter="category">
                             <span class="checkmark"></span>
-                            Truck
+                            Wheels & Tires
                         </label>
                     </div>
                 </div>
@@ -84,29 +130,29 @@
                     <h4>Brand</h4>
                     <div class="filter-options">
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="brand" value="toyota">
+                            <input type="checkbox" value="bosch" class="parts-filter" data-filter="brand">
                             <span class="checkmark"></span>
-                            Toyota
+                            Bosch
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="brand" value="honda">
+                            <input type="checkbox" value="denso" class="parts-filter" data-filter="brand">
                             <span class="checkmark"></span>
-                            Honda
+                            Denso
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="brand" value="ford">
+                            <input type="checkbox" value="brembo" class="parts-filter" data-filter="brand">
                             <span class="checkmark"></span>
-                            Ford
+                            Brembo
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="brand" value="bmw">
+                            <input type="checkbox" value="monroe" class="parts-filter" data-filter="brand">
                             <span class="checkmark"></span>
-                            BMW
+                            Monroe
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="brand" value="mercedes">
+                            <input type="checkbox" value="acdelco" class="parts-filter" data-filter="brand">
                             <span class="checkmark"></span>
-                            Mercedes-Benz
+                            ACDelco
                         </label>
                     </div>
                 </div>
@@ -114,38 +160,44 @@
                 <div class="filter-section">
                     <h4>Price Range</h4>
                     <div class="range-slider">
-                        <input type="range" min="0" max="200000" value="100000" class="slider" id="price-range">
+                        <input type="range" min="10" max="1000" value="500" class="slider" id="parts-price-range">
                         <div class="range-values">
-                            <span>$0</span>
-                            <span id="price-value">$100,000</span>
-                            <span>$200,000</span>
+                            <span>$10</span>
+                            <span id="parts-price-value">$500</span>
+                            <span>$1000</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="filter-section">
-                    <h4>Year</h4>
-                    <div class="year-inputs">
-                        <div class="year-input">
-                            <label for="min-year">Min</label>
-                            <select id="min-year">
-                                <option value="2000">2000</option>
-                                <option value="2005">2005</option>
-                                <option value="2010">2010</option>
-                                <option value="2015">2015</option>
-                                <option value="2020">2020</option>
-                            </select>
-                        </div>
-                        <div class="year-input">
-                            <label for="max-year">Max</label>
-                            <select id="max-year">
-                                <option value="2023">2023</option>
-                                <option value="2022">2022</option>
-                                <option value="2021">2021</option>
-                                <option value="2020">2020</option>
-                                <option value="2015">2015</option>
-                            </select>
-                        </div>
+                    <h4>Vehicle Compatibility</h4>
+                    <div class="form-group">
+                        <label for="vehicle-make">Make</label>
+                        <select id="vehicle-make">
+                            <option value="">All Makes</option>
+                            <option value="toyota">Toyota</option>
+                            <option value="honda">Honda</option>
+                            <option value="ford">Ford</option>
+                            <option value="bmw">BMW</option>
+                            <option value="mercedes">Mercedes-Benz</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle-model">Model</label>
+                        <select id="vehicle-model" disabled>
+                            <option value="">Select Make First</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle-year">Year</label>
+                        <select id="vehicle-year">
+                            <option value="">All Years</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
                     </div>
                 </div>
 
@@ -153,80 +205,49 @@
                     <h4>Condition</h4>
                     <div class="filter-options">
                         <label class="checkbox-container">
-                            <input type="checkbox" value="new">
+                            <input type="checkbox" value="new" class="parts-filter" data-filter="condition">
                             <span class="checkmark"></span>
                             New
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" value="used">
+                            <input type="checkbox" value="used" class="parts-filter" data-filter="condition">
                             <span class="checkmark"></span>
                             Used
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" value="certified">
+                            <input type="checkbox" value="refurbished" class="parts-filter" data-filter="condition">
                             <span class="checkmark"></span>
-                            Certified Pre-Owned
+                            Refurbished
                         </label>
                     </div>
                 </div>
 
-                <div class="filter-section">
-                    <h4>Features</h4>
-                    <div class="filter-options">
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="bluetooth">
-                            <span class="checkmark"></span>
-                            Bluetooth
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="navigation">
-                            <span class="checkmark"></span>
-                            Navigation
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="leather">
-                            <span class="checkmark"></span>
-                            Leather Seats
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="sunroof">
-                            <span class="checkmark"></span>
-                            Sunroof
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="camera">
-                            <span class="checkmark"></span>
-                            Backup Camera
-                        </label>
-                    </div>
-                </div>
-
-                <button class="btn-primary apply-filters">Apply Filters</button>
-                <button class="btn-secondary reset-filters">Reset Filters</button>
+                <button class="btn-primary apply-filters" id="apply-parts-filters">Apply Filters</button>
+                <button class="btn-secondary reset-filters" id="reset-parts-filters">Reset Filters</button>
             </div>
 
-            <div class="marketplace-results">
+            <div class="parts-results">
                 <div class="results-header">
                     <button id="mobile-filter-toggle" class="mobile-only">
                         <i class="fas fa-filter"></i> Filters
                     </button>
                     <div class="results-count">
-                        <p><span id="results-number">24</span> cars found</p>
+                        <p><span id="parts-results-number">24</span> parts found</p>
                     </div>
                     <div class="sort-options">
-                        <label for="sort-by">Sort by:</label>
-                        <select id="sort-by">
+                        <label for="sort-parts-by">Sort by:</label>
+                        <select id="sort-parts-by">
                             <option value="relevance">Relevance</option>
                             <option value="price-low">Price: Low to High</option>
                             <option value="price-high">Price: High to Low</option>
-                            <option value="year-new">Year: Newest First</option>
-                            <option value="year-old">Year: Oldest First</option>
+                            <option value="rating">Rating</option>
+                            <option value="popularity">Popularity</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="car-grid" id="car-listings">
-                    <!-- Car listings will be populated by JavaScript -->
+                <div class="parts-grid" id="parts-listings">
+                    <!-- Parts listings will be populated by JavaScript -->
                 </div>
 
                 <div class="pagination">
@@ -237,6 +258,42 @@
                     <button class="pagination-btn">4</button>
                     <button class="pagination-btn">5</button>
                     <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="parts-info">
+            <div class="parts-info-content">
+                <h2>Why Choose Our Parts?</h2>
+                <div class="parts-info-grid">
+                    <div class="parts-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Genuine Parts</h3>
+                        <p>All our parts are genuine OEM or high-quality aftermarket alternatives, ensuring perfect fit and function for your vehicle.</p>
+                    </div>
+                    <div class="parts-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Warranty</h3>
+                        <p>Our parts come with manufacturer warranties, giving you peace of mind with every purchase.</p>
+                    </div>
+                    <div class="parts-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Fast Shipping</h3>
+                        <p>We offer expedited shipping options to get your parts delivered quickly when you need them most.</p>
+                    </div>
+                    <div class="parts-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Expert Support</h3>
+                        <p>Our team of automotive experts is available to help you find the right parts for your specific vehicle.</p>
+                    </div>
                 </div>
             </div>
         </section>

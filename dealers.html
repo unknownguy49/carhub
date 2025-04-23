@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketplace - CarHub</title>
+    <title>Car Dealers - CarHub</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -16,10 +16,10 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="marketplace.html" class="active">Marketplace</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
                 <li><a href="rentals.html">Rentals</a></li>
                 <li><a href="parts.html">Parts</a></li>
-                <li><a href="dealers.html">Dealers</a></li>
+                <li><a href="dealers.html" class="active">Dealers</a></li>
             </ul>
         </nav>
         <div class="user-actions">
@@ -37,12 +37,64 @@
     </div>
 
     <main>
-        <section class="marketplace-header">
-            <h1>Car Marketplace</h1>
-            <p>Find your perfect car from our extensive collection</p>
+        <section class="page-header">
+            <h1>Car Dealers</h1>
+            <p>Find trusted dealers in your area</p>
         </section>
 
-        <section class="marketplace-content">
+        <section class="dealer-search">
+            <div class="dealer-search-form">
+                <h2>Find Dealers Near You</h2>
+                <form id="dealer-search-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dealer-location">Location</label>
+                            <input type="text" id="dealer-location" placeholder="City, State or ZIP Code">
+                        </div>
+                        <div class="form-group">
+                            <label for="dealer-radius">Radius</label>
+                            <select id="dealer-radius">
+                                <option value="10">10 miles</option>
+                                <option value="25" selected>25 miles</option>
+                                <option value="50">50 miles</option>
+                                <option value="100">100 miles</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dealer-brand">Brand</label>
+                            <select id="dealer-brand">
+                                <option value="">All Brands</option>
+                                <option value="toyota">Toyota</option>
+                                <option value="honda">Honda</option>
+                                <option value="ford">Ford</option>
+                                <option value="bmw">BMW</option>
+                                <option value="mercedes">Mercedes-Benz</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dealer-type">Dealer Type</label>
+                            <select id="dealer-type">
+                                <option value="">All Types</option>
+                                <option value="new">New Cars</option>
+                                <option value="used">Used Cars</option>
+                                <option value="certified">Certified Pre-Owned</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <button type="submit" class="btn-primary search-btn">
+                                <i class="fas fa-search"></i> Search
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="dealer-content">
             <div class="filters-sidebar">
                 <div class="filter-section">
                     <h3>Filter Options</h3>
@@ -50,32 +102,27 @@
                 </div>
                 
                 <div class="filter-section">
-                    <h4>Car Type</h4>
+                    <h4>Dealer Type</h4>
                     <div class="filter-options">
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="type" value="sedan">
+                            <input type="checkbox" value="new" class="dealer-filter" data-filter="type">
                             <span class="checkmark"></span>
-                            Sedan
+                            New Car Dealers
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="type" value="suv">
+                            <input type="checkbox" value="used" class="dealer-filter" data-filter="type">
                             <span class="checkmark"></span>
-                            SUV
+                            Used Car Dealers
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="type" value="hatchback">
+                            <input type="checkbox" value="certified" class="dealer-filter" data-filter="type">
                             <span class="checkmark"></span>
-                            Hatchback
+                            Certified Pre-Owned
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="type" value="coupe">
+                            <input type="checkbox" value="independent" class="dealer-filter" data-filter="type">
                             <span class="checkmark"></span>
-                            Coupe
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="type" value="truck">
-                            <span class="checkmark"></span>
-                            Truck
+                            Independent Dealers
                         </label>
                     </div>
                 </div>
@@ -84,27 +131,27 @@
                     <h4>Brand</h4>
                     <div class="filter-options">
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="brand" value="toyota">
+                            <input type="checkbox" value="toyota" class="dealer-filter" data-filter="brand">
                             <span class="checkmark"></span>
                             Toyota
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="brand" value="honda">
+                            <input type="checkbox" value="honda" class="dealer-filter" data-filter="brand">
                             <span class="checkmark"></span>
                             Honda
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="brand" value="ford">
+                            <input type="checkbox" value="ford" class="dealer-filter" data-filter="brand">
                             <span class="checkmark"></span>
                             Ford
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="brand" value="bmw">
+                            <input type="checkbox" value="bmw" class="dealer-filter" data-filter="brand">
                             <span class="checkmark"></span>
                             BMW
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" class="car-filter" data-filter="brand" value="mercedes">
+                            <input type="checkbox" value="mercedes" class="dealer-filter" data-filter="brand">
                             <span class="checkmark"></span>
                             Mercedes-Benz
                         </label>
@@ -112,121 +159,82 @@
                 </div>
 
                 <div class="filter-section">
-                    <h4>Price Range</h4>
-                    <div class="range-slider">
-                        <input type="range" min="0" max="200000" value="100000" class="slider" id="price-range">
-                        <div class="range-values">
-                            <span>$0</span>
-                            <span id="price-value">$100,000</span>
-                            <span>$200,000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="filter-section">
-                    <h4>Year</h4>
-                    <div class="year-inputs">
-                        <div class="year-input">
-                            <label for="min-year">Min</label>
-                            <select id="min-year">
-                                <option value="2000">2000</option>
-                                <option value="2005">2005</option>
-                                <option value="2010">2010</option>
-                                <option value="2015">2015</option>
-                                <option value="2020">2020</option>
-                            </select>
-                        </div>
-                        <div class="year-input">
-                            <label for="max-year">Max</label>
-                            <select id="max-year">
-                                <option value="2023">2023</option>
-                                <option value="2022">2022</option>
-                                <option value="2021">2021</option>
-                                <option value="2020">2020</option>
-                                <option value="2015">2015</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="filter-section">
-                    <h4>Condition</h4>
+                    <h4>Services</h4>
                     <div class="filter-options">
                         <label class="checkbox-container">
-                            <input type="checkbox" value="new">
+                            <input type="checkbox" value="financing" class="dealer-filter" data-filter="services">
                             <span class="checkmark"></span>
-                            New
+                            Financing
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" value="used">
+                            <input type="checkbox" value="service" class="dealer-filter" data-filter="services">
                             <span class="checkmark"></span>
-                            Used
+                            Service Center
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" value="certified">
+                            <input type="checkbox" value="parts" class="dealer-filter" data-filter="services">
                             <span class="checkmark"></span>
-                            Certified Pre-Owned
+                            Parts Department
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="bodyshop" class="dealer-filter" data-filter="services">
+                            <span class="checkmark"></span>
+                            Body Shop
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" value="rental" class="dealer-filter" data-filter="services">
+                            <span class="checkmark"></span>
+                            Rental Services
                         </label>
                     </div>
                 </div>
 
                 <div class="filter-section">
-                    <h4>Features</h4>
+                    <h4>Rating</h4>
                     <div class="filter-options">
                         <label class="checkbox-container">
-                            <input type="checkbox" value="bluetooth">
+                            <input type="checkbox" value="5" class="dealer-filter" data-filter="rating">
                             <span class="checkmark"></span>
-                            Bluetooth
+                            5 Stars
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" value="navigation">
+                            <input type="checkbox" value="4" class="dealer-filter" data-filter="rating">
                             <span class="checkmark"></span>
-                            Navigation
+                            4+ Stars
                         </label>
                         <label class="checkbox-container">
-                            <input type="checkbox" value="leather">
+                            <input type="checkbox" value="3" class="dealer-filter" data-filter="rating">
                             <span class="checkmark"></span>
-                            Leather Seats
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="sunroof">
-                            <span class="checkmark"></span>
-                            Sunroof
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="camera">
-                            <span class="checkmark"></span>
-                            Backup Camera
+                            3+ Stars
                         </label>
                     </div>
                 </div>
 
-                <button class="btn-primary apply-filters">Apply Filters</button>
-                <button class="btn-secondary reset-filters">Reset Filters</button>
+                <button class="btn-primary apply-filters" id="apply-dealer-filters">Apply Filters</button>
+                <button class="btn-secondary reset-filters" id="reset-dealer-filters">Reset Filters</button>
             </div>
 
-            <div class="marketplace-results">
+            <div class="dealer-results">
                 <div class="results-header">
                     <button id="mobile-filter-toggle" class="mobile-only">
                         <i class="fas fa-filter"></i> Filters
                     </button>
                     <div class="results-count">
-                        <p><span id="results-number">24</span> cars found</p>
+                        <p><span id="dealer-results-number">15</span> dealers found</p>
                     </div>
                     <div class="sort-options">
-                        <label for="sort-by">Sort by:</label>
-                        <select id="sort-by">
-                            <option value="relevance">Relevance</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="year-new">Year: Newest First</option>
-                            <option value="year-old">Year: Oldest First</option>
+                        <label for="sort-dealers-by">Sort by:</label>
+                        <select id="sort-dealers-by">
+                            <option value="distance">Distance</option>
+                            <option value="rating">Rating</option>
+                            <option value="name-asc">Name: A-Z</option>
+                            <option value="name-desc">Name: Z-A</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="car-grid" id="car-listings">
-                    <!-- Car listings will be populated by JavaScript -->
+                <div class="dealer-grid" id="dealer-listings">
+                    <!-- Dealer listings will be populated by JavaScript -->
                 </div>
 
                 <div class="pagination">
@@ -234,10 +242,19 @@
                     <button class="pagination-btn active">1</button>
                     <button class="pagination-btn">2</button>
                     <button class="pagination-btn">3</button>
-                    <button class="pagination-btn">4</button>
-                    <button class="pagination-btn">5</button>
                     <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
                 </div>
+            </div>
+        </section>
+
+        <section class="become-dealer">
+            <div class="dealer-content">
+                <h2>Become a Dealer</h2>
+                <p>List your inventory and grow your business with CarHub</p>
+                <button style="width: 200px; height: 60px;" class="btn-primary">Apply Now</button>
+            </div>
+            <div class="dealer-image">
+                <img src="images/dealer.png" alt="Car dealership" style="width: 350px; height: auto;">
             </div>
         </section>
     </main>

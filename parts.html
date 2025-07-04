@@ -1,415 +1,529 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/ch.png" />
     <title>Car Parts - CarHub</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class="logo">
-            <h1>CarHub</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="rentals.html">Rentals</a></li>
-                <li><a href="parts.html" class="active">Parts</a></li>
-                <li><a href="dealers.html">Dealers</a></li>
-            </ul>
-        </nav>
-        <div class="user-actions">
-            <button id="search-btn"><i class="fas fa-search"></i></button>
-            <button id="login-btn">Login</button>
-            <button id="register-btn" class="btn-primary">Register</button>
-        </div>
+      <div class="logo">
+        <h1>CarHub</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="marketplace.html">Marketplace</a></li>
+          <li><a href="rentals.html">Rentals</a></li>
+          <li><a href="parts.html" class="active">Parts</a></li>
+          <li><a href="dealers.html">Dealers</a></li>
+        </ul>
+      </nav>
+      <div class="user-actions">
+        <button id="search-btn"><i class="fa-solid fa-search"></i></button>
+        <button id="login-btn">Login</button>
+        <button id="register-btn" class="btn-primary">Register</button>
+      </div>
     </header>
 
     <div class="search-overlay" id="search-overlay">
-        <div class="search-container">
-            <input type="text" placeholder="Search cars, parts, dealers...">
-            <button class="close-search"><i class="fas fa-times"></i></button>
-        </div>
+      <div class="search-container">
+        <input type="text" placeholder="Search cars, parts, dealers..." />
+        <button class="close-search"><i class="fa-solid fa-times"></i></button>
+      </div>
     </div>
 
     <main>
-        <section class="page-header">
-            <h1>Car Parts & Accessories</h1>
-            <p>Find genuine parts and accessories for your vehicle</p>
-        </section>
+      <section class="page-header">
+        <h1>Car Parts & Accessories</h1>
+        <p>Find genuine parts and accessories for your vehicle</p>
+      </section>
 
-        <section class="parts-categories">
-            <h2>Browse Categories</h2>
-            <div class="category-cards">
-                <div class="category-card" data-category="engine">
-                    <div class="card-icon"><i class="fas fa-cogs"></i></div>
-                    <h3>Engine Parts</h3>
-                    <p>Pistons, valves, and more</p>
-                </div>
-                <div class="category-card" data-category="exterior">
-                    <div class="card-icon"><i class="fas fa-car-side"></i></div>
-                    <h3>Exterior</h3>
-                    <p>Body parts and accessories</p>
-                </div>
-                <div class="category-card" data-category="interior">
-                    <div class="card-icon"><i class="fas fa-couch"></i></div>
-                    <h3>Interior</h3>
-                    <p>Seats, dashboards, and more</p>
-                </div>
-                <div class="category-card" data-category="electronics">
-                    <div class="card-icon"><i class="fas fa-microchip"></i></div>
-                    <h3>Electronics</h3>
-                    <p>Sensors, modules, and wiring</p>
-                </div>
-                <div class="category-card" data-category="wheels">
-                    <div class="card-icon"><i class="fas fa-circle"></i></div>
-                    <h3>Wheels & Tires</h3>
-                    <p>Rims, tires, and accessories</p>
-                </div>
-                <div class="category-card" data-category="brakes">
-                    <div class="card-icon"><i class="fas fa-brake-code"></i></div>
-                    <h3>Brakes</h3>
-                    <p>Pads, rotors, and calipers</p>
-                </div>
-                <div class="category-card" data-category="suspension">
-                    <div class="card-icon"><i class="fas fa-car-crash"></i></div>
-                    <h3>Suspension</h3>
-                    <p>Shocks, struts, and springs</p>
-                </div>
-                <div class="category-card" data-category="accessories">
-                    <div class="card-icon"><i class="fas fa-tools"></i></div>
-                    <h3>Accessories</h3>
-                    <p>Floor mats, covers, and more</p>
-                </div>
+      <section class="parts-categories">
+        <h2>Browse Categories</h2>
+        <div class="category-cards">
+          <div class="category-card" data-category="engine">
+            <div class="card-icon"><i class="fa-solid fa-cogs"></i></div>
+            <h3>Engine Parts</h3>
+            <p>Pistons, valves, and more</p>
+          </div>
+          <div class="category-card" data-category="exterior">
+            <div class="card-icon"><i class="fa-solid fa-car-side"></i></div>
+            <h3>Exterior</h3>
+            <p>Body parts and accessories</p>
+          </div>
+          <div class="category-card" data-category="interior">
+            <div class="card-icon"><i class="fa-solid fa-couch"></i></div>
+            <h3>Interior</h3>
+            <p>Seats, dashboards, and more</p>
+          </div>
+          <div class="category-card" data-category="electronics">
+            <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Electronics</h3>
+            <p>Sensors, modules, and wiring</p>
+          </div>
+          <div class="category-card" data-category="wheels">
+            <div class="card-icon"><i class="fa-solid fa-circle"></i></div>
+            <h3>Wheels & Tires</h3>
+            <p>Rims, tires, and accessories</p>
+          </div>
+          <div class="category-card" data-category="brakes">
+            <div class="card-icon"><i class="fa-solid fa-brake-code"></i></div>
+            <h3>Brakes</h3>
+            <p>Pads, rotors, and calipers</p>
+          </div>
+          <div class="category-card" data-category="suspension">
+            <div class="card-icon"><i class="fa-solid fa-car-crash"></i></div>
+            <h3>Suspension</h3>
+            <p>Shocks, struts, and springs</p>
+          </div>
+          <div class="category-card" data-category="accessories">
+            <div class="card-icon"><i class="fa-solid fa-tools"></i></div>
+            <h3>Accessories</h3>
+            <p>Floor mats, covers, and more</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="parts-content">
+        <div class="filters-sidebar">
+          <div class="filter-section">
+            <h3>Filter Options</h3>
+            <button id="mobile-filter-close" class="mobile-only">
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+
+          <div class="filter-section">
+            <h4>Category</h4>
+            <div class="filter-options">
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="engine"
+                  class="parts-filter"
+                  data-filter="category"
+                />
+                <span class="checkmark"></span>
+                Engine Parts
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="exterior"
+                  class="parts-filter"
+                  data-filter="category"
+                />
+                <span class="checkmark"></span>
+                Exterior
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="interior"
+                  class="parts-filter"
+                  data-filter="category"
+                />
+                <span class="checkmark"></span>
+                Interior
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="electronics"
+                  class="parts-filter"
+                  data-filter="category"
+                />
+                <span class="checkmark"></span>
+                Electronics
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="wheels"
+                  class="parts-filter"
+                  data-filter="category"
+                />
+                <span class="checkmark"></span>
+                Wheels & Tires
+              </label>
             </div>
-        </section>
+          </div>
 
-        <section class="parts-content">
-            <div class="filters-sidebar">
-                <div class="filter-section">
-                    <h3>Filter Options</h3>
-                    <button id="mobile-filter-close" class="mobile-only"><i class="fas fa-times"></i></button>
-                </div>
-                
-                <div class="filter-section">
-                    <h4>Category</h4>
-                    <div class="filter-options">
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="engine" class="parts-filter" data-filter="category">
-                            <span class="checkmark"></span>
-                            Engine Parts
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="exterior" class="parts-filter" data-filter="category">
-                            <span class="checkmark"></span>
-                            Exterior
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="interior" class="parts-filter" data-filter="category">
-                            <span class="checkmark"></span>
-                            Interior
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="electronics" class="parts-filter" data-filter="category">
-                            <span class="checkmark"></span>
-                            Electronics
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="wheels" class="parts-filter" data-filter="category">
-                            <span class="checkmark"></span>
-                            Wheels & Tires
-                        </label>
-                    </div>
-                </div>
-
-                <div class="filter-section">
-                    <h4>Brand</h4>
-                    <div class="filter-options">
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="bosch" class="parts-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            Bosch
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="denso" class="parts-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            Denso
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="brembo" class="parts-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            Brembo
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="monroe" class="parts-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            Monroe
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="acdelco" class="parts-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            ACDelco
-                        </label>
-                    </div>
-                </div>
-
-                <div class="filter-section">
-                    <h4>Price Range</h4>
-                    <div class="range-slider">
-                        <input type="range" min="10" max="1000" value="500" class="slider" id="parts-price-range">
-                        <div class="range-values">
-                            <span>$10</span>
-                            <span id="parts-price-value">$500</span>
-                            <span>$1000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="filter-section">
-                    <h4>Vehicle Compatibility</h4>
-                    <div class="form-group">
-                        <label for="vehicle-make">Make</label>
-                        <select id="vehicle-make">
-                            <option value="">All Makes</option>
-                            <option value="toyota">Toyota</option>
-                            <option value="honda">Honda</option>
-                            <option value="ford">Ford</option>
-                            <option value="bmw">BMW</option>
-                            <option value="mercedes">Mercedes-Benz</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="vehicle-model">Model</label>
-                        <select id="vehicle-model" disabled>
-                            <option value="">Select Make First</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="vehicle-year">Year</label>
-                        <select id="vehicle-year">
-                            <option value="">All Years</option>
-                            <option value="2023">2023</option>
-                            <option value="2022">2022</option>
-                            <option value="2021">2021</option>
-                            <option value="2020">2020</option>
-                            <option value="2019">2019</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="filter-section">
-                    <h4>Condition</h4>
-                    <div class="filter-options">
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="new" class="parts-filter" data-filter="condition">
-                            <span class="checkmark"></span>
-                            New
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="used" class="parts-filter" data-filter="condition">
-                            <span class="checkmark"></span>
-                            Used
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="refurbished" class="parts-filter" data-filter="condition">
-                            <span class="checkmark"></span>
-                            Refurbished
-                        </label>
-                    </div>
-                </div>
-
-                <button class="btn-primary apply-filters" id="apply-parts-filters">Apply Filters</button>
-                <button class="btn-secondary reset-filters" id="reset-parts-filters">Reset Filters</button>
+          <div class="filter-section">
+            <h4>Brand</h4>
+            <div class="filter-options">
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="bosch"
+                  class="parts-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                Bosch
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="denso"
+                  class="parts-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                Denso
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="brembo"
+                  class="parts-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                Brembo
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="monroe"
+                  class="parts-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                Monroe
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="acdelco"
+                  class="parts-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                ACDelco
+              </label>
             </div>
+          </div>
 
-            <div class="parts-results">
-                <div class="results-header">
-                    <button id="mobile-filter-toggle" class="mobile-only">
-                        <i class="fas fa-filter"></i> Filters
-                    </button>
-                    <div class="results-count">
-                        <p><span id="parts-results-number">24</span> parts found</p>
-                    </div>
-                    <div class="sort-options">
-                        <label for="sort-parts-by">Sort by:</label>
-                        <select id="sort-parts-by">
-                            <option value="relevance">Relevance</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="rating">Rating</option>
-                            <option value="popularity">Popularity</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="parts-grid" id="parts-listings">
-                    <!-- Parts listings will be populated by JavaScript -->
-                </div>
-
-                <div class="pagination">
-                    <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
-                    <button class="pagination-btn active">1</button>
-                    <button class="pagination-btn">2</button>
-                    <button class="pagination-btn">3</button>
-                    <button class="pagination-btn">4</button>
-                    <button class="pagination-btn">5</button>
-                    <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
-                </div>
+          <div class="filter-section">
+            <h4>Price Range</h4>
+            <div class="range-slider">
+              <input
+                type="range"
+                min="10"
+                max="1000"
+                value="500"
+                class="slider"
+                id="parts-price-range"
+              />
+              <div class="range-values">
+                <span>$10</span>
+                <span id="parts-price-value">$500</span>
+                <span>$1000</span>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <section class="parts-info">
-            <div class="parts-info-content">
-                <h2>Why Choose Our Parts?</h2>
-                <div class="parts-info-grid">
-                    <div class="parts-info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h3>Genuine Parts</h3>
-                        <p>All our parts are genuine OEM or high-quality aftermarket alternatives, ensuring perfect fit and function for your vehicle.</p>
-                    </div>
-                    <div class="parts-info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Warranty</h3>
-                        <p>Our parts come with manufacturer warranties, giving you peace of mind with every purchase.</p>
-                    </div>
-                    <div class="parts-info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <h3>Fast Shipping</h3>
-                        <p>We offer expedited shipping options to get your parts delivered quickly when you need them most.</p>
-                    </div>
-                    <div class="parts-info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3>Expert Support</h3>
-                        <p>Our team of automotive experts is available to help you find the right parts for your specific vehicle.</p>
-                    </div>
-                </div>
+          <div class="filter-section">
+            <h4>Vehicle Compatibility</h4>
+            <div class="form-group">
+              <label for="vehicle-make">Make</label>
+              <select id="vehicle-make">
+                <option value="">All Makes</option>
+                <option value="toyota">Toyota</option>
+                <option value="honda">Honda</option>
+                <option value="ford">Ford</option>
+                <option value="bmw">BMW</option>
+                <option value="mercedes">Mercedes-Benz</option>
+              </select>
             </div>
-        </section>
+            <div class="form-group">
+              <label for="vehicle-model">Model</label>
+              <select id="vehicle-model" disabled>
+                <option value="">Select Make First</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="vehicle-year">Year</label>
+              <select id="vehicle-year">
+                <option value="">All Years</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h4>Condition</h4>
+            <div class="filter-options">
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="new"
+                  class="parts-filter"
+                  data-filter="condition"
+                />
+                <span class="checkmark"></span>
+                New
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="used"
+                  class="parts-filter"
+                  data-filter="condition"
+                />
+                <span class="checkmark"></span>
+                Used
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="refurbished"
+                  class="parts-filter"
+                  data-filter="condition"
+                />
+                <span class="checkmark"></span>
+                Refurbished
+              </label>
+            </div>
+          </div>
+
+          <button class="btn-primary apply-filters" id="apply-parts-filters">
+            Apply Filters
+          </button>
+          <button class="btn-secondary reset-filters" id="reset-parts-filters">
+            Reset Filters
+          </button>
+        </div>
+
+        <div class="parts-results">
+          <div class="results-header">
+            <button id="mobile-filter-toggle" class="mobile-only">
+              <i class="fa-solid fa-filter"></i> Filters
+            </button>
+            <div class="results-count">
+              <p><span id="parts-results-number">24</span> parts found</p>
+            </div>
+            <div class="sort-options">
+              <label for="sort-parts-by">Sort by:</label>
+              <select id="sort-parts-by">
+                <option value="relevance">Relevance</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Rating</option>
+                <option value="popularity">Popularity</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="parts-grid" id="parts-listings">
+            <!-- Parts listings will be populated by JavaScript -->
+          </div>
+
+          <div class="pagination">
+            <button class="pagination-btn" disabled>
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn">4</button>
+            <button class="pagination-btn">5</button>
+            <button class="pagination-btn">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="parts-info">
+        <div class="parts-info-content">
+          <h2>Why Choose Our Parts?</h2>
+          <div class="parts-info-grid">
+            <div class="parts-info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-check-circle"></i>
+              </div>
+              <h3>Genuine Parts</h3>
+              <p>
+                All our parts are genuine OEM or high-quality aftermarket
+                alternatives, ensuring perfect fit and function for your
+                vehicle.
+              </p>
+            </div>
+            <div class="parts-info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-shield-alt"></i>
+              </div>
+              <h3>Warranty</h3>
+              <p>
+                Our parts come with manufacturer warranties, giving you peace of
+                mind with every purchase.
+              </p>
+            </div>
+            <div class="parts-info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-truck"></i>
+              </div>
+              <h3>Fast Shipping</h3>
+              <p>
+                We offer expedited shipping options to get your parts delivered
+                quickly when you need them most.
+              </p>
+            </div>
+            <div class="parts-info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-tools"></i>
+              </div>
+              <h3>Expert Support</h3>
+              <p>
+                Our team of automotive experts is available to help you find the
+                right parts for your specific vehicle.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>CarHub</h3>
-                <p>Your one-stop destination for all automotive needs. Buy, sell, or rent cars and parts with ease.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="rentals.html">Rentals</a></li>
-                    <li><a href="parts.html">Parts</a></li>
-                    <li><a href="dealers.html">Dealers</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Newsletter</h3>
-                <p>Subscribe to our newsletter for the latest updates and offers.</p>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Your Email">
-                    <button class="btn-primary">Subscribe</button>
-                </div>
-            </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>CarHub</h3>
+          <p>
+            Your one-stop destination for all automotive needs. Buy, sell, or
+            rent cars and parts with ease.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 CarHub. All rights reserved.</p>
-            <p>Developed by: Adityaraj Singh Rathore, Devansh Mishra, Shaikh Abul Fazl, Dibyadyuti Dutta</p>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="rentals.html">Rentals</a></li>
+            <li><a href="parts.html">Parts</a></li>
+            <li><a href="dealers.html">Dealers</a></li>
+          </ul>
         </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <p>Subscribe to our newsletter for the latest updates and offers.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Your Email" />
+            <button class="btn-primary">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 CarHub. All rights reserved.</p>
+        <p>
+          Developed by: Adityaraj Singh Rathore, Devansh Mishra, Shaikh Abul
+          Fazl, Dibyadyuti Dutta
+        </p>
+      </div>
     </footer>
 
     <!-- Login Modal -->
     <div class="modal" id="login-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Login</h2>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="login-email">Email</label>
-                    <input type="email" id="login-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" required>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn-primary">Login</button>
-                    <p>Don't have an account? <a href="#" id="switch-to-register">Register</a></p>
-                </div>
-            </form>
-        </div>
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Login</button>
+            <p>
+              Don't have an account?
+              <a href="#" id="switch-to-register">Register</a>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- Register Modal -->
     <div class="modal" id="register-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Register</h2>
-            <form id="register-form">
-                <div class="form-group">
-                    <label for="register-name">Full Name</label>
-                    <input type="text" id="register-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-email">Email</label>
-                    <input type="email" id="register-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-phone">Phone Number</label>
-                    <input type="tel" id="register-phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-password">Password</label>
-                    <input type="password" id="register-password" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-confirm-password">Confirm Password</label>
-                    <input type="password" id="register-confirm-password" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-role">I am a:</label>
-                    <select id="register-role" required>
-                        <option value="buyer">Buyer</option>
-                        <option value="seller">Seller</option>
-                        <option value="dealer">Dealer</option>
-                    </select>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn-primary">Register</button>
-                    <p>Already have an account? <a href="#" id="switch-to-login">Login</a></p>
-                </div>
-            </form>
-        </div>
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Register</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label for="register-name">Full Name</label>
+            <input type="text" id="register-name" required />
+          </div>
+          <div class="form-group">
+            <label for="register-email">Email</label>
+            <input type="email" id="register-email" required />
+          </div>
+          <div class="form-group">
+            <label for="register-phone">Phone Number</label>
+            <input type="tel" id="register-phone" required />
+          </div>
+          <div class="form-group">
+            <label for="register-password">Password</label>
+            <input type="password" id="register-password" required />
+          </div>
+          <div class="form-group">
+            <label for="register-confirm-password">Confirm Password</label>
+            <input type="password" id="register-confirm-password" required />
+          </div>
+          <div class="form-group">
+            <label for="register-role">I am a:</label>
+            <select id="register-role" required>
+              <option value="buyer">Buyer</option>
+              <option value="seller">Seller</option>
+              <option value="dealer">Dealer</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Register</button>
+            <p>
+              Already have an account?
+              <a href="#" id="switch-to-login">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

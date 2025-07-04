@@ -1,375 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/ch.png" />
     <title>Car Dealers - CarHub</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class="logo">
-            <h1>CarHub</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="rentals.html">Rentals</a></li>
-                <li><a href="parts.html">Parts</a></li>
-                <li><a href="dealers.html" class="active">Dealers</a></li>
-            </ul>
-        </nav>
-        <div class="user-actions">
-            <button id="search-btn"><i class="fas fa-search"></i></button>
-            <button id="login-btn">Login</button>
-            <button id="register-btn" class="btn-primary">Register</button>
-        </div>
+      <div class="logo">
+        <h1>CarHub</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="marketplace.html">Marketplace</a></li>
+          <li><a href="rentals.html">Rentals</a></li>
+          <li><a href="parts.html">Parts</a></li>
+          <li><a href="dealers.html" class="active">Dealers</a></li>
+        </ul>
+      </nav>
+      <div class="user-actions">
+        <button id="search-btn"><i class="fa-solid fa-search"></i></button>
+        <button id="login-btn">Login</button>
+        <button id="register-btn" class="btn-primary">Register</button>
+      </div>
     </header>
 
     <div class="search-overlay" id="search-overlay">
-        <div class="search-container">
-            <input type="text" placeholder="Search cars, parts, dealers...">
-            <button class="close-search"><i class="fas fa-times"></i></button>
-        </div>
+      <div class="search-container">
+        <input type="text" placeholder="Search cars, parts, dealers..." />
+        <button class="close-search"><i class="fa-solid fa-times"></i></button>
+      </div>
     </div>
 
     <main>
-        <section class="page-header">
-            <h1>Car Dealers</h1>
-            <p>Find trusted dealers in your area</p>
-        </section>
+      <section class="page-header">
+        <h1>Car Dealers</h1>
+        <p>Find trusted dealers in your area</p>
+      </section>
 
-        <section class="dealer-search">
-            <div class="dealer-search-form">
-                <h2>Find Dealers Near You</h2>
-                <form id="dealer-search-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="dealer-location">Location</label>
-                            <input type="text" id="dealer-location" placeholder="City, State or ZIP Code">
-                        </div>
-                        <div class="form-group">
-                            <label for="dealer-radius">Radius</label>
-                            <select id="dealer-radius">
-                                <option value="10">10 miles</option>
-                                <option value="25" selected>25 miles</option>
-                                <option value="50">50 miles</option>
-                                <option value="100">100 miles</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="dealer-brand">Brand</label>
-                            <select id="dealer-brand">
-                                <option value="">All Brands</option>
-                                <option value="toyota">Toyota</option>
-                                <option value="honda">Honda</option>
-                                <option value="ford">Ford</option>
-                                <option value="bmw">BMW</option>
-                                <option value="mercedes">Mercedes-Benz</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="dealer-type">Dealer Type</label>
-                            <select id="dealer-type">
-                                <option value="">All Types</option>
-                                <option value="new">New Cars</option>
-                                <option value="used">Used Cars</option>
-                                <option value="certified">Certified Pre-Owned</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <button type="submit" class="btn-primary search-btn">
-                                <i class="fas fa-search"></i> Search
-                            </button>
-                        </div>
-                    </div>
-                </form>
+      <section class="dealer-search">
+        <div class="dealer-search-form">
+          <h2>Find Dealers Near You</h2>
+          <form id="dealer-search-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dealer-location">Location</label>
+                <input
+                  type="text"
+                  id="dealer-location"
+                  placeholder="City, State or ZIP Code"
+                />
+              </div>
+              <div class="form-group">
+                <label for="dealer-radius">Radius</label>
+                <select id="dealer-radius">
+                  <option value="10">10 miles</option>
+                  <option value="25" selected>25 miles</option>
+                  <option value="50">50 miles</option>
+                  <option value="100">100 miles</option>
+                </select>
+              </div>
             </div>
-        </section>
-
-        <section class="dealer-content">
-            <div class="filters-sidebar">
-                <div class="filter-section">
-                    <h3>Filter Options</h3>
-                    <button id="mobile-filter-close" class="mobile-only"><i class="fas fa-times"></i></button>
-                </div>
-                
-                <div class="filter-section">
-                    <h4>Dealer Type</h4>
-                    <div class="filter-options">
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="new" class="dealer-filter" data-filter="type">
-                            <span class="checkmark"></span>
-                            New Car Dealers
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="used" class="dealer-filter" data-filter="type">
-                            <span class="checkmark"></span>
-                            Used Car Dealers
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="certified" class="dealer-filter" data-filter="type">
-                            <span class="checkmark"></span>
-                            Certified Pre-Owned
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="independent" class="dealer-filter" data-filter="type">
-                            <span class="checkmark"></span>
-                            Independent Dealers
-                        </label>
-                    </div>
-                </div>
-
-                <div class="filter-section">
-                    <h4>Brand</h4>
-                    <div class="filter-options">
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="toyota" class="dealer-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            Toyota
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="honda" class="dealer-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            Honda
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="ford" class="dealer-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            Ford
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="bmw" class="dealer-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            BMW
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="mercedes" class="dealer-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            Mercedes-Benz
-                        </label>
-                    </div>
-                </div>
-
-                <div class="filter-section">
-                    <h4>Services</h4>
-                    <div class="filter-options">
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="financing" class="dealer-filter" data-filter="services">
-                            <span class="checkmark"></span>
-                            Financing
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="service" class="dealer-filter" data-filter="services">
-                            <span class="checkmark"></span>
-                            Service Center
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="parts" class="dealer-filter" data-filter="services">
-                            <span class="checkmark"></span>
-                            Parts Department
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="bodyshop" class="dealer-filter" data-filter="services">
-                            <span class="checkmark"></span>
-                            Body Shop
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="rental" class="dealer-filter" data-filter="services">
-                            <span class="checkmark"></span>
-                            Rental Services
-                        </label>
-                    </div>
-                </div>
-
-                <div class="filter-section">
-                    <h4>Rating</h4>
-                    <div class="filter-options">
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="5" class="dealer-filter" data-filter="rating">
-                            <span class="checkmark"></span>
-                            5 Stars
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="4" class="dealer-filter" data-filter="rating">
-                            <span class="checkmark"></span>
-                            4+ Stars
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="3" class="dealer-filter" data-filter="rating">
-                            <span class="checkmark"></span>
-                            3+ Stars
-                        </label>
-                    </div>
-                </div>
-
-                <button class="btn-primary apply-filters" id="apply-dealer-filters">Apply Filters</button>
-                <button class="btn-secondary reset-filters" id="reset-dealer-filters">Reset Filters</button>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dealer-brand">Brand</label>
+                <select id="dealer-brand">
+                  <option value="">All Brands</option>
+                  <option value="toyota">Toyota</option>
+                  <option value="honda">Honda</option>
+                  <option value="ford">Ford</option>
+                  <option value="bmw">BMW</option>
+                  <option value="mercedes">Mercedes-Benz</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="dealer-type">Dealer Type</label>
+                <select id="dealer-type">
+                  <option value="">All Types</option>
+                  <option value="new">New Cars</option>
+                  <option value="used">Used Cars</option>
+                  <option value="certified">Certified Pre-Owned</option>
+                </select>
+              </div>
             </div>
-
-            <div class="dealer-results">
-                <div class="results-header">
-                    <button id="mobile-filter-toggle" class="mobile-only">
-                        <i class="fas fa-filter"></i> Filters
-                    </button>
-                    <div class="results-count">
-                        <p><span id="dealer-results-number">15</span> dealers found</p>
-                    </div>
-                    <div class="sort-options">
-                        <label for="sort-dealers-by">Sort by:</label>
-                        <select id="sort-dealers-by">
-                            <option value="distance">Distance</option>
-                            <option value="rating">Rating</option>
-                            <option value="name-asc">Name: A-Z</option>
-                            <option value="name-desc">Name: Z-A</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="dealer-grid" id="dealer-listings">
-                    <!-- Dealer listings will be populated by JavaScript -->
-                </div>
-
-                <div class="pagination">
-                    <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
-                    <button class="pagination-btn active">1</button>
-                    <button class="pagination-btn">2</button>
-                    <button class="pagination-btn">3</button>
-                    <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
-                </div>
+            <div class="form-row">
+              <div class="form-group">
+                <button type="submit" class="btn-primary search-btn">
+                  <i class="fa-solid fa-search"></i> Search
+                </button>
+              </div>
             </div>
-        </section>
+          </form>
+        </div>
+      </section>
 
-        <section class="become-dealer">
-            <div class="dealer-content">
-                <h2>Become a Dealer</h2>
-                <p>List your inventory and grow your business with CarHub</p>
-                <button style="width: 200px; height: 60px;" class="btn-primary">Apply Now</button>
+      <section class="dealer-content">
+        <div class="filters-sidebar">
+          <div class="filter-section">
+            <h3>Filter Options</h3>
+            <button id="mobile-filter-close" class="mobile-only">
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+
+          <div class="filter-section">
+            <h4>Dealer Type</h4>
+            <div class="filter-options">
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="new"
+                  class="dealer-filter"
+                  data-filter="type"
+                />
+                <span class="checkmark"></span>
+                New Car Dealers
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="used"
+                  class="dealer-filter"
+                  data-filter="type"
+                />
+                <span class="checkmark"></span>
+                Used Car Dealers
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="certified"
+                  class="dealer-filter"
+                  data-filter="type"
+                />
+                <span class="checkmark"></span>
+                Certified Pre-Owned
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="independent"
+                  class="dealer-filter"
+                  data-filter="type"
+                />
+                <span class="checkmark"></span>
+                Independent Dealers
+              </label>
             </div>
-            <div class="dealer-image">
-                <img src="images/dealer.png" alt="Car dealership" style="width: 350px; height: auto;">
+          </div>
+
+          <div class="filter-section">
+            <h4>Brand</h4>
+            <div class="filter-options">
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="toyota"
+                  class="dealer-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                Toyota
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="honda"
+                  class="dealer-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                Honda
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="ford"
+                  class="dealer-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                Ford
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="bmw"
+                  class="dealer-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                BMW
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="mercedes"
+                  class="dealer-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                Mercedes-Benz
+              </label>
             </div>
-        </section>
+          </div>
+
+          <div class="filter-section">
+            <h4>Services</h4>
+            <div class="filter-options">
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="financing"
+                  class="dealer-filter"
+                  data-filter="services"
+                />
+                <span class="checkmark"></span>
+                Financing
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="service"
+                  class="dealer-filter"
+                  data-filter="services"
+                />
+                <span class="checkmark"></span>
+                Service Center
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="parts"
+                  class="dealer-filter"
+                  data-filter="services"
+                />
+                <span class="checkmark"></span>
+                Parts Department
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="bodyshop"
+                  class="dealer-filter"
+                  data-filter="services"
+                />
+                <span class="checkmark"></span>
+                Body Shop
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="rental"
+                  class="dealer-filter"
+                  data-filter="services"
+                />
+                <span class="checkmark"></span>
+                Rental Services
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h4>Rating</h4>
+            <div class="filter-options">
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="5"
+                  class="dealer-filter"
+                  data-filter="rating"
+                />
+                <span class="checkmark"></span>
+                5 Stars
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="4"
+                  class="dealer-filter"
+                  data-filter="rating"
+                />
+                <span class="checkmark"></span>
+                4+ Stars
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="3"
+                  class="dealer-filter"
+                  data-filter="rating"
+                />
+                <span class="checkmark"></span>
+                3+ Stars
+              </label>
+            </div>
+          </div>
+
+          <button class="btn-primary apply-filters" id="apply-dealer-filters">
+            Apply Filters
+          </button>
+          <button class="btn-secondary reset-filters" id="reset-dealer-filters">
+            Reset Filters
+          </button>
+        </div>
+
+        <div class="dealer-results">
+          <div class="results-header">
+            <button id="mobile-filter-toggle" class="mobile-only">
+              <i class="fa-solid fa-filter"></i> Filters
+            </button>
+            <div class="results-count">
+              <p><span id="dealer-results-number">15</span> dealers found</p>
+            </div>
+            <div class="sort-options">
+              <label for="sort-dealers-by">Sort by:</label>
+              <select id="sort-dealers-by">
+                <option value="distance">Distance</option>
+                <option value="rating">Rating</option>
+                <option value="name-asc">Name: A-Z</option>
+                <option value="name-desc">Name: Z-A</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="dealer-grid" id="dealer-listings">
+            <!-- Dealer listings will be populated by JavaScript -->
+          </div>
+
+          <div class="pagination">
+            <button class="pagination-btn" disabled>
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="become-dealer">
+        <div class="dealer-content">
+          <h2>Become a Dealer</h2>
+          <p>List your inventory and grow your business with CarHub</p>
+          <button style="width: 200px; height: 60px" class="btn-primary">
+            Apply Now
+          </button>
+        </div>
+        <div class="dealer-image">
+          <img
+            src="images/dealer.png"
+            alt="Car dealership"
+            style="width: 350px; height: auto"
+          />
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>CarHub</h3>
-                <p>Your one-stop destination for all automotive needs. Buy, sell, or rent cars and parts with ease.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="rentals.html">Rentals</a></li>
-                    <li><a href="parts.html">Parts</a></li>
-                    <li><a href="dealers.html">Dealers</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Newsletter</h3>
-                <p>Subscribe to our newsletter for the latest updates and offers.</p>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Your Email">
-                    <button class="btn-primary">Subscribe</button>
-                </div>
-            </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>CarHub</h3>
+          <p>
+            Your one-stop destination for all automotive needs. Buy, sell, or
+            rent cars and parts with ease.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 CarHub. All rights reserved.</p>
-            <p>Developed by: Adityaraj Singh Rathore, Devansh Mishra, Shaikh Abul Fazl, Dibyadyuti Dutta</p>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="rentals.html">Rentals</a></li>
+            <li><a href="parts.html">Parts</a></li>
+            <li><a href="dealers.html">Dealers</a></li>
+          </ul>
         </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <p>Subscribe to our newsletter for the latest updates and offers.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Your Email" />
+            <button class="btn-primary">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 CarHub. All rights reserved.</p>
+        <p>
+          Developed by: Adityaraj Singh Rathore, Devansh Mishra, Shaikh Abul
+          Fazl, Dibyadyuti Dutta
+        </p>
+      </div>
     </footer>
 
     <!-- Login Modal -->
     <div class="modal" id="login-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Login</h2>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="login-email">Email</label>
-                    <input type="email" id="login-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" required>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn-primary">Login</button>
-                    <p>Don't have an account? <a href="#" id="switch-to-register">Register</a></p>
-                </div>
-            </form>
-        </div>
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Login</button>
+            <p>
+              Don't have an account?
+              <a href="#" id="switch-to-register">Register</a>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- Register Modal -->
     <div class="modal" id="register-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Register</h2>
-            <form id="register-form">
-                <div class="form-group">
-                    <label for="register-name">Full Name</label>
-                    <input type="text" id="register-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-email">Email</label>
-                    <input type="email" id="register-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-phone">Phone Number</label>
-                    <input type="tel" id="register-phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-password">Password</label>
-                    <input type="password" id="register-password" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-confirm-password">Confirm Password</label>
-                    <input type="password" id="register-confirm-password" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-role">I am a:</label>
-                    <select id="register-role" required>
-                        <option value="buyer">Buyer</option>
-                        <option value="seller">Seller</option>
-                        <option value="dealer">Dealer</option>
-                    </select>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn-primary">Register</button>
-                    <p>Already have an account? <a href="#" id="switch-to-login">Login</a></p>
-                </div>
-            </form>
-        </div>
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Register</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label for="register-name">Full Name</label>
+            <input type="text" id="register-name" required />
+          </div>
+          <div class="form-group">
+            <label for="register-email">Email</label>
+            <input type="email" id="register-email" required />
+          </div>
+          <div class="form-group">
+            <label for="register-phone">Phone Number</label>
+            <input type="tel" id="register-phone" required />
+          </div>
+          <div class="form-group">
+            <label for="register-password">Password</label>
+            <input type="password" id="register-password" required />
+          </div>
+          <div class="form-group">
+            <label for="register-confirm-password">Confirm Password</label>
+            <input type="password" id="register-confirm-password" required />
+          </div>
+          <div class="form-group">
+            <label for="register-role">I am a:</label>
+            <select id="register-role" required>
+              <option value="buyer">Buyer</option>
+              <option value="seller">Seller</option>
+              <option value="dealer">Dealer</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Register</button>
+            <p>
+              Already have an account?
+              <a href="#" id="switch-to-login">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

@@ -1,505 +1,643 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/ch.png" />
     <title>Car Rentals - CarHub</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class="logo">
-            <h1>CarHub</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="rentals.html" class="active">Rentals</a></li>
-                <li><a href="parts.html">Parts</a></li>
-                <li><a href="dealers.html">Dealers</a></li>
-            </ul>
-        </nav>
-        <div class="user-actions">
-            <button id="search-btn"><i class="fas fa-search"></i></button>
-            <button id="login-btn">Login</button>
-            <button id="register-btn" class="btn-primary">Register</button>
-        </div>
+      <div class="logo">
+        <h1>CarHub</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="marketplace.html">Marketplace</a></li>
+          <li><a href="rentals.html" class="active">Rentals</a></li>
+          <li><a href="parts.html">Parts</a></li>
+          <li><a href="dealers.html">Dealers</a></li>
+        </ul>
+      </nav>
+      <div class="user-actions">
+        <button id="search-btn"><i class="fa-solid fa-search"></i></button>
+        <button id="login-btn">Login</button>
+        <button id="register-btn" class="btn-primary">Register</button>
+      </div>
     </header>
 
     <div class="search-overlay" id="search-overlay">
-        <div class="search-container">
-            <input type="text" placeholder="Search cars, parts, dealers...">
-            <button class="close-search"><i class="fas fa-times"></i></button>
-        </div>
+      <div class="search-container">
+        <input type="text" placeholder="Search cars, parts, dealers..." />
+        <button class="close-search"><i class="fa-solid fa-times"></i></button>
+      </div>
     </div>
 
     <main>
-        <section class="page-header">
-            <h1>Car Rentals</h1>
-            <p>Rent your perfect car for any occasion</p>
-        </section>
+      <section class="page-header">
+        <h1>Car Rentals</h1>
+        <p>Rent your perfect car for any occasion</p>
+      </section>
 
-        <section class="rental-search">
-            <div class="rental-search-form">
-                <h2>Find Your Rental Car</h2>
-                <form id="rental-search-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="pickup-location">Pickup Location</label>
-                            <select id="pickup-location" required>
-                                <option value="">Select Location</option>
-                                <option value="new-york">New York</option>
-                                <option value="los-angeles">Los Angeles</option>
-                                <option value="chicago">Chicago</option>
-                                <option value="houston">Houston</option>
-                                <option value="miami">Miami</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="dropoff-location">Drop-off Location</label>
-                            <select id="dropoff-location">
-                                <option value="">Same as pickup</option>
-                                <option value="new-york">New York</option>
-                                <option value="los-angeles">Los Angeles</option>
-                                <option value="chicago">Chicago</option>
-                                <option value="houston">Houston</option>
-                                <option value="miami">Miami</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="pickup-date">Pickup Date</label>
-                            <input type="date" id="pickup-date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="pickup-time">Pickup Time</label>
-                            <select id="pickup-time" required>
-                                <option value="09:00">09:00 AM</option>
-                                <option value="10:00">10:00 AM</option>
-                                <option value="11:00">11:00 AM</option>
-                                <option value="12:00">12:00 PM</option>
-                                <option value="13:00">01:00 PM</option>
-                                <option value="14:00">02:00 PM</option>
-                                <option value="15:00">03:00 PM</option>
-                                <option value="16:00">04:00 PM</option>
-                                <option value="17:00">05:00 PM</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="dropoff-date">Drop-off Date</label>
-                            <input type="date" id="dropoff-date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="dropoff-time">Drop-off Time</label>
-                            <select id="dropoff-time" required>
-                                <option value="09:00">09:00 AM</option>
-                                <option value="10:00">10:00 AM</option>
-                                <option value="11:00">11:00 AM</option>
-                                <option value="12:00">12:00 PM</option>
-                                <option value="13:00">01:00 PM</option>
-                                <option value="14:00">02:00 PM</option>
-                                <option value="15:00">03:00 PM</option>
-                                <option value="16:00">04:00 PM</option>
-                                <option value="17:00">05:00 PM</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="car-type">Car Type</label>
-                            <select id="car-type">
-                                <option value="">All Types</option>
-                                <option value="economy">Economy</option>
-                                <option value="compact">Compact</option>
-                                <option value="midsize">Midsize</option>
-                                <option value="suv">SUV</option>
-                                <option value="luxury">Luxury</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn-primary search-btn">
-                                <i class="fas fa-search"></i> Search
-                            </button>
-                        </div>
-                    </div>
-                </form>
+      <section class="rental-search">
+        <div class="rental-search-form">
+          <h2>Find Your Rental Car</h2>
+          <form id="rental-search-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pickup-location">Pickup Location</label>
+                <select id="pickup-location" required>
+                  <option value="">Select Location</option>
+                  <option value="new-york">New York</option>
+                  <option value="los-angeles">Los Angeles</option>
+                  <option value="chicago">Chicago</option>
+                  <option value="houston">Houston</option>
+                  <option value="miami">Miami</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="dropoff-location">Drop-off Location</label>
+                <select id="dropoff-location">
+                  <option value="">Same as pickup</option>
+                  <option value="new-york">New York</option>
+                  <option value="los-angeles">Los Angeles</option>
+                  <option value="chicago">Chicago</option>
+                  <option value="houston">Houston</option>
+                  <option value="miami">Miami</option>
+                </select>
+              </div>
             </div>
-        </section>
-
-        <section class="rental-content">
-            <div class="filters-sidebar">
-                <div class="filter-section">
-                    <h3>Filter Options</h3>
-                    <button id="mobile-filter-close" class="mobile-only"><i class="fas fa-times"></i></button>
-                </div>
-                
-                <div class="filter-section">
-                    <h4>Car Type</h4>
-                    <div class="filter-options">
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="economy" class="rental-filter" data-filter="type">
-                            <span class="checkmark"></span>
-                            Economy
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="compact" class="rental-filter" data-filter="type">
-                            <span class="checkmark"></span>
-                            Compact
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="midsize" class="rental-filter" data-filter="type">
-                            <span class="checkmark"></span>
-                            Midsize
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="suv" class="rental-filter" data-filter="type">
-                            <span class="checkmark"></span>
-                            SUV
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="luxury" class="rental-filter" data-filter="type">
-                            <span class="checkmark"></span>
-                            Luxury
-                        </label>
-                    </div>
-                </div>
-
-                <div class="filter-section">
-                    <h4>Brand</h4>
-                    <div class="filter-options">
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="toyota" class="rental-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            Toyota
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="honda" class="rental-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            Honda
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="ford" class="rental-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            Ford
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="bmw" class="rental-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            BMW
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="mercedes" class="rental-filter" data-filter="brand">
-                            <span class="checkmark"></span>
-                            Mercedes-Benz
-                        </label>
-                    </div>
-                </div>
-
-                <div class="filter-section">
-                    <h4>Daily Rate</h4>
-                    <div class="range-slider">
-                        <input type="range" min="20" max="500" value="250" class="slider" id="price-range">
-                        <div class="range-values">
-                            <span>$20</span>
-                            <span id="price-value">$250</span>
-                            <span>$500</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="filter-section">
-                    <h4>Features</h4>
-                    <div class="filter-options">
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="bluetooth" class="rental-filter" data-filter="features">
-                            <span class="checkmark"></span>
-                            Bluetooth
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="navigation" class="rental-filter" data-filter="features">
-                            <span class="checkmark"></span>
-                            Navigation
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="leather" class="rental-filter" data-filter="features">
-                            <span class="checkmark"></span>
-                            Leather Seats
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="sunroof" class="rental-filter" data-filter="features">
-                            <span class="checkmark"></span>
-                            Sunroof
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" value="camera" class="rental-filter" data-filter="features">
-                            <span class="checkmark"></span>
-                            Backup Camera
-                        </label>
-                    </div>
-                </div>
-
-                <button class="btn-primary apply-filters" id="apply-rental-filters">Apply Filters</button>
-                <button class="btn-secondary reset-filters" id="reset-rental-filters">Reset Filters</button>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pickup-date">Pickup Date</label>
+                <input type="date" id="pickup-date" required />
+              </div>
+              <div class="form-group">
+                <label for="pickup-time">Pickup Time</label>
+                <select id="pickup-time" required>
+                  <option value="09:00">09:00 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="13:00">01:00 PM</option>
+                  <option value="14:00">02:00 PM</option>
+                  <option value="15:00">03:00 PM</option>
+                  <option value="16:00">04:00 PM</option>
+                  <option value="17:00">05:00 PM</option>
+                </select>
+              </div>
             </div>
-
-            <div class="rental-results">
-                <div class="results-header">
-                    <button id="mobile-filter-toggle" class="mobile-only">
-                        <i class="fas fa-filter"></i> Filters
-                    </button>
-                    <div class="results-count">
-                        <p><span id="rental-results-number">12</span> cars available</p>
-                    </div>
-                    <div class="sort-options">
-                        <label for="sort-by">Sort by:</label>
-                        <select id="sort-rentals-by">
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="popularity">Popularity</option>
-                            <option value="rating">Rating</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="rental-grid" id="rental-listings">
-                    <!-- Rental listings will be populated by JavaScript -->
-                </div>
-
-                <div class="pagination">
-                    <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
-                    <button class="pagination-btn active">1</button>
-                    <button class="pagination-btn">2</button>
-                    <button class="pagination-btn">3</button>
-                    <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
-                </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dropoff-date">Drop-off Date</label>
+                <input type="date" id="dropoff-date" required />
+              </div>
+              <div class="form-group">
+                <label for="dropoff-time">Drop-off Time</label>
+                <select id="dropoff-time" required>
+                  <option value="09:00">09:00 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="13:00">01:00 PM</option>
+                  <option value="14:00">02:00 PM</option>
+                  <option value="15:00">03:00 PM</option>
+                  <option value="16:00">04:00 PM</option>
+                  <option value="17:00">05:00 PM</option>
+                </select>
+              </div>
             </div>
-        </section>
-
-        <section class="rental-info">
-            <div class="rental-info-content">
-                <h2>Rental Information</h2>
-                <div class="rental-info-grid">
-                    <div class="rental-info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-id-card"></i>
-                        </div>
-                        <h3>Requirements</h3>
-                        <ul>
-                            <li>Valid driver's license</li>
-                            <li>Credit or debit card</li>
-                            <li>Minimum age: 21 years</li>
-                            <li>Security deposit required</li>
-                        </ul>
-                    </div>
-                    <div class="rental-info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Insurance Options</h3>
-                        <ul>
-                            <li>Basic insurance included</li>
-                            <li>Premium coverage available</li>
-                            <li>Roadside assistance</li>
-                            <li>Personal accident insurance</li>
-                        </ul>
-                    </div>
-                    <div class="rental-info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-gas-pump"></i>
-                        </div>
-                        <h3>Fuel Policy</h3>
-                        <ul>
-                            <li>Full-to-full policy</li>
-                            <li>Return with same fuel level</li>
-                            <li>Refueling service available</li>
-                            <li>Fuel efficiency information provided</li>
-                        </ul>
-                    </div>
-                    <div class="rental-info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </div>
-                        <h3>Late Return Policy</h3>
-                        <ul>
-                            <li>Grace period: 30 minutes</li>
-                            <li>Hourly charges apply after grace period</li>
-                            <li>Full day charge after 3 hours</li>
-                            <li>Contact rental office for extensions</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="car-type">Car Type</label>
+                <select id="car-type">
+                  <option value="">All Types</option>
+                  <option value="economy">Economy</option>
+                  <option value="compact">Compact</option>
+                  <option value="midsize">Midsize</option>
+                  <option value="suv">SUV</option>
+                  <option value="luxury">Luxury</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn-primary search-btn">
+                  <i class="fa-solid fa-search"></i> Search
+                </button>
+              </div>
             </div>
-        </section>
+          </form>
+        </div>
+      </section>
 
-        <section class="rental-faq">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What documents do I need to rent a car?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>To rent a car, you'll need a valid driver's license, a credit or debit card in your name, and a form of identification (passport or ID card). International renters may need an International Driving Permit along with their national driver's license.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Is there a security deposit required?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, a security deposit is required for all rentals. The amount varies depending on the vehicle type and rental duration. The deposit is typically held on your credit card and released after the vehicle is returned in the same condition.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Can I modify or cancel my reservation?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, you can modify or cancel your reservation through your account or by contacting our customer service. Modifications are subject to vehicle availability. Cancellations made at least 48 hours before the pickup time are free of charge. Late cancellations may incur a fee.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What happens if I return the car late?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We provide a 30-minute grace period for returns. After that, hourly charges will apply. If you're more than 3 hours late, you'll be charged for an additional day. To avoid extra charges, you can extend your rental by contacting our customer service.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Is insurance included in the rental price?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Basic insurance is included in all our rental prices, covering liability and collision damage with a deductible. We offer additional insurance options for comprehensive coverage, including zero-deductible options, personal accident insurance, and roadside assistance.</p>
-                    </div>
-                </div>
+      <section class="rental-content">
+        <div class="filters-sidebar">
+          <div class="filter-section">
+            <h3>Filter Options</h3>
+            <button id="mobile-filter-close" class="mobile-only">
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+
+          <div class="filter-section">
+            <h4>Car Type</h4>
+            <div class="filter-options">
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="economy"
+                  class="rental-filter"
+                  data-filter="type"
+                />
+                <span class="checkmark"></span>
+                Economy
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="compact"
+                  class="rental-filter"
+                  data-filter="type"
+                />
+                <span class="checkmark"></span>
+                Compact
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="midsize"
+                  class="rental-filter"
+                  data-filter="type"
+                />
+                <span class="checkmark"></span>
+                Midsize
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="suv"
+                  class="rental-filter"
+                  data-filter="type"
+                />
+                <span class="checkmark"></span>
+                SUV
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="luxury"
+                  class="rental-filter"
+                  data-filter="type"
+                />
+                <span class="checkmark"></span>
+                Luxury
+              </label>
             </div>
-        </section>
+          </div>
+
+          <div class="filter-section">
+            <h4>Brand</h4>
+            <div class="filter-options">
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="toyota"
+                  class="rental-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                Toyota
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="honda"
+                  class="rental-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                Honda
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="ford"
+                  class="rental-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                Ford
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="bmw"
+                  class="rental-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                BMW
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="mercedes"
+                  class="rental-filter"
+                  data-filter="brand"
+                />
+                <span class="checkmark"></span>
+                Mercedes-Benz
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h4>Daily Rate</h4>
+            <div class="range-slider">
+              <input
+                type="range"
+                min="20"
+                max="500"
+                value="250"
+                class="slider"
+                id="rental-price-range"
+              />
+              <div class="range-values">
+                <span>$20</span>
+                <span id="rental-price-value">$250</span>
+                <span>$500</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h4>Features</h4>
+            <div class="filter-options">
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="bluetooth"
+                  class="rental-filter"
+                  data-filter="features"
+                />
+                <span class="checkmark"></span>
+                Bluetooth
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="navigation"
+                  class="rental-filter"
+                  data-filter="features"
+                />
+                <span class="checkmark"></span>
+                Navigation
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="leather"
+                  class="rental-filter"
+                  data-filter="features"
+                />
+                <span class="checkmark"></span>
+                Leather Seats
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="sunroof"
+                  class="rental-filter"
+                  data-filter="features"
+                />
+                <span class="checkmark"></span>
+                Sunroof
+              </label>
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  value="camera"
+                  class="rental-filter"
+                  data-filter="features"
+                />
+                <span class="checkmark"></span>
+                Backup Camera
+              </label>
+            </div>
+          </div>
+
+          <button class="btn-primary apply-filters" id="apply-rental-filters">
+            Apply Filters
+          </button>
+          <button class="btn-secondary reset-filters" id="reset-rental-filters">
+            Reset Filters
+          </button>
+        </div>
+
+        <div class="rental-results">
+          <div class="results-header">
+            <button id="mobile-filter-toggle" class="mobile-only">
+              <i class="fa-solid fa-filter"></i> Filters
+            </button>
+            <div class="results-count">
+              <p><span id="rental-results-number">12</span> cars available</p>
+            </div>
+            <div class="sort-options">
+              <label for="sort-by">Sort by:</label>
+              <select id="sort-rentals-by">
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="popularity">Popularity</option>
+                <option value="rating">Rating</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="rental-grid" id="rental-listings">
+            <!-- Rental listings will be populated by JavaScript -->
+          </div>
+
+          <div class="pagination">
+            <button class="pagination-btn" disabled>
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="rental-info">
+        <div class="rental-info-content">
+          <h2>Rental Information</h2>
+          <div class="rental-info-grid">
+            <div class="rental-info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-id-card"></i>
+              </div>
+              <h3>Requirements</h3>
+              <ul>
+                <li>Valid driver's license</li>
+                <li>Credit or debit card</li>
+                <li>Minimum age: 21 years</li>
+                <li>Security deposit required</li>
+              </ul>
+            </div>
+            <div class="rental-info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-shield-alt"></i>
+              </div>
+              <h3>Insurance Options</h3>
+              <ul>
+                <li>Basic insurance included</li>
+                <li>Premium coverage available</li>
+                <li>Roadside assistance</li>
+                <li>Personal accident insurance</li>
+              </ul>
+            </div>
+            <div class="rental-info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-gas-pump"></i>
+              </div>
+              <h3>Fuel Policy</h3>
+              <ul>
+                <li>Full-to-full policy</li>
+                <li>Return with same fuel level</li>
+                <li>Refueling service available</li>
+                <li>Fuel efficiency information provided</li>
+              </ul>
+            </div>
+            <div class="rental-info-card">
+              <div class="info-icon">
+                <i class="fa-solid fa-exclamation-triangle"></i>
+              </div>
+              <h3>Late Return Policy</h3>
+              <ul>
+                <li>Grace period: 30 minutes</li>
+                <li>Hourly charges apply after grace period</li>
+                <li>Full day charge after 3 hours</li>
+                <li>Contact rental office for extensions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rental-faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What documents do I need to rent a car?</h3>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                To rent a car, you'll need a valid driver's license, a credit or
+                debit card in your name, and a form of identification (passport
+                or ID card). International renters may need an International
+                Driving Permit along with their national driver's license.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Is there a security deposit required?</h3>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, a security deposit is required for all rentals. The amount
+                varies depending on the vehicle type and rental duration. The
+                deposit is typically held on your credit card and released after
+                the vehicle is returned in the same condition.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can I modify or cancel my reservation?</h3>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, you can modify or cancel your reservation through your
+                account or by contacting our customer service. Modifications are
+                subject to vehicle availability. Cancellations made at least 48
+                hours before the pickup time are free of charge. Late
+                cancellations may incur a fee.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What happens if I return the car late?</h3>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We provide a 30-minute grace period for returns. After that,
+                hourly charges will apply. If you're more than 3 hours late,
+                you'll be charged for an additional day. To avoid extra charges,
+                you can extend your rental by contacting our customer service.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Is insurance included in the rental price?</h3>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Basic insurance is included in all our rental prices, covering
+                liability and collision damage with a deductible. We offer
+                additional insurance options for comprehensive coverage,
+                including zero-deductible options, personal accident insurance,
+                and roadside assistance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>CarHub</h3>
-                <p>Your one-stop destination for all automotive needs. Buy, sell, or rent cars and parts with ease.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="rentals.html">Rentals</a></li>
-                    <li><a href="parts.html">Parts</a></li>
-                    <li><a href="dealers.html">Dealers</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Newsletter</h3>
-                <p>Subscribe to our newsletter for the latest updates and offers.</p>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Your Email">
-                    <button class="btn-primary">Subscribe</button>
-                </div>
-            </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>CarHub</h3>
+          <p>
+            Your one-stop destination for all automotive needs. Buy, sell, or
+            rent cars and parts with ease.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 CarHub. All rights reserved.</p>
-            <p>Developed by: Adityaraj Singh Rathore, Devansh Mishra, Shaikh Abul Fazl, Dibyadyuti Dutta</p>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="rentals.html">Rentals</a></li>
+            <li><a href="parts.html">Parts</a></li>
+            <li><a href="dealers.html">Dealers</a></li>
+          </ul>
         </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <p>Subscribe to our newsletter for the latest updates and offers.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Your Email" />
+            <button class="btn-primary">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 CarHub. All rights reserved.</p>
+        <p>
+          Developed by: Adityaraj Singh Rathore, Devansh Mishra, Shaikh Abul
+          Fazl, Dibyadyuti Dutta
+        </p>
+      </div>
     </footer>
 
     <!-- Login Modal -->
     <div class="modal" id="login-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Login</h2>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="login-email">Email</label>
-                    <input type="email" id="login-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" required>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn-primary">Login</button>
-                    <p>Don't have an account? <a href="#" id="switch-to-register">Register</a></p>
-                </div>
-            </form>
-        </div>
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Login</button>
+            <p>
+              Don't have an account?
+              <a href="#" id="switch-to-register">Register</a>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- Register Modal -->
     <div class="modal" id="register-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Register</h2>
-            <form id="register-form">
-                <div class="form-group">
-                    <label for="register-name">Full Name</label>
-                    <input type="text" id="register-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-email">Email</label>
-                    <input type="email" id="register-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-phone">Phone Number</label>
-                    <input type="tel" id="register-phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-password">Password</label>
-                    <input type="password" id="register-password" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-confirm-password">Confirm Password</label>
-                    <input type="password" id="register-confirm-password" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-role">I am a:</label>
-                    <select id="register-role" required>
-                        <option value="buyer">Buyer</option>
-                        <option value="seller">Seller</option>
-                        <option value="dealer">Dealer</option>
-                    </select>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn-primary">Register</button>
-                    <p>Already have an account? <a href="#" id="switch-to-login">Login</a></p>
-                </div>
-            </form>
-        </div>
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Register</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label for="register-name">Full Name</label>
+            <input type="text" id="register-name" required />
+          </div>
+          <div class="form-group">
+            <label for="register-email">Email</label>
+            <input type="email" id="register-email" required />
+          </div>
+          <div class="form-group">
+            <label for="register-phone">Phone Number</label>
+            <input type="tel" id="register-phone" required />
+          </div>
+          <div class="form-group">
+            <label for="register-password">Password</label>
+            <input type="password" id="register-password" required />
+          </div>
+          <div class="form-group">
+            <label for="register-confirm-password">Confirm Password</label>
+            <input type="password" id="register-confirm-password" required />
+          </div>
+          <div class="form-group">
+            <label for="register-role">I am a:</label>
+            <select id="register-role" required>
+              <option value="buyer">Buyer</option>
+              <option value="seller">Seller</option>
+              <option value="dealer">Dealer</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Register</button>
+            <p>
+              Already have an account?
+              <a href="#" id="switch-to-login">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
